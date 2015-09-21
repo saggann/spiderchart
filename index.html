@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<link href="./bootstrap.min.css" rel="stylesheet">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+
+</head>
+
+
+<body>
+
+<script src="./jquery-2.1.4.min.js"></script>
+
+<script src="./bootstrap.min.js" ></script>
+
+
+<script src="./highcharts.js"></script>
+<script src="./highcharts-more.js"></script>
+<script src="./exporting.js"></script>
+
+<div class="container-fluid text-center">
+	<div id="container" style="min-width: 400px; max-width: 600px; height: 400px; margin: 0 auto"></div>
+</div>
+
+
+<script>
+
+$(function () {
+
+    $('#container').highcharts({
+
+	 credits: {
+            enabled: false
+        },
+		
+		exporting: { enabled: false },
+		
+        chart: {
+            polar: true,
+            type: 'line'
+        },
+
+        title: {
+            text: '',
+        },
+
+        pane: {
+            size: '80%',
+			startAngle: 0,
+            endAngle: 360
+    
+		
+        },
+
+        xAxis: {
+		        //tickInterval: 20,
+                min: 0,
+				max: 20,
+			
+            categories: [	
+					'Procalcitonine',
+					'hA1C',
+					'Cholesterol',
+					'Triglycerides',
+					'HDL',
+					'LDL',
+					'Acide urique',
+					'Creatinine',
+					'MDRD',
+					'Uree',
+					'Protides',
+					'Calcium',
+					'Phosphore',
+					'ASAT',
+					'ALAT',
+					'PAL',
+					'Gamma-GT',
+					'Lipase',
+					'CPK totale',
+					'NT-pro BNP',
+					'Ferritine'
+
+							],
+            lineWidth: 0,
+			labels: {
+                style: {
+             
+                    fontSize:'10px'
+                }
+				},
+				 gridZIndex: 4
+        },
+
+        yAxis: {
+            gridLineInterpolation: 'polygon',
+            lineWidth: 0,
+            min: 0,
+			max:250
+        },
+
+        tooltip: {
+            shared: false,
+            pointFormat: '<span style="color:{series.color}">NB : <b>{point.y:,.0f}</b><br/>'
+        },
+
+        legend: { },
+
+        series: [{
+    showInLegend : false,
+            name: 'High',
+			type:'area',
+            data: [
+				200,
+				200,
+				200,
+				148,
+				167,
+				123,
+				135,
+				130,
+				125,
+				143,
+				114,
+				109,
+				125,
+				177,
+				178,
+				173,
+				183,
+				164,
+				170,
+				200,
+				186,
+			],
+            pointPlacement: null,
+			marker: {enabled: false},
+			lineWidth: 0,
+			color: '#BCF5A9'
+			
+			
+        },
+		{
+		     showInLegend : false,
+			name: 'Low',
+			type:'area',
+            data: [
+					0,
+					0,
+					0,
+					52,
+					33,
+					77,
+					65,
+					70,
+					75,
+					57,
+					86,
+					91,
+					75,
+					23,
+					22,
+					27,
+					17,
+					36,
+					30,
+					0,
+					14,
+
+
+			],
+            pointPlacement: null,
+			marker: { enabled: false  },
+			lineWidth: 0,
+			color:'white'
+			
+        },
+		
+		
+			{
+            name: 'Patient',
+			 showInLegend : false,
+			type:'line',
+            data: [
+			20,
+			228,
+			217,
+			289,
+			24,
+			0,
+			119,
+			110,
+			58,
+			111,
+			89,
+			98,
+			109,
+			84,
+			74,
+			93,
+			60,
+			118,
+			79,
+			16,
+			124,
+
+
+			],
+            pointPlacement: 'on',
+			color:'#08298A',
+			           marker: {enabled: false  },
+
+        }
+		
+		]
+
+    });
+});
+
+</script>
+
+
+
+</body>
+</html>
