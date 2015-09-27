@@ -21,13 +21,255 @@
 <script src="./highcharts-more.js"></script>
 <script src="./exporting.js"></script>
 
+<div class="row">
 <div class="container-fluid text-center">
 	<div id="container" style="margin: 0 auto"></div>
+</div>
+</div>
+
+<div class="row">
+<div class="container-fluid text-center">
+	<div id="container2" style="margin: 0 auto"></div>
+</div>
+</div>
+
+<div class="row">
+<div class="container-fluid text-center">
+	<div id="container3" style="margin: 0 auto"></div>
+</div>
 </div>
 
 
 <script>
 
+/////////////////////////////////////////////////////////////////////////////////////////
+$(function () {
+
+    $('#container2').highcharts({
+
+	 credits: {
+            enabled: false
+        },
+		
+		exporting: { enabled: false },
+		
+        chart: {
+            polar: true,
+            type: 'line'
+        },
+
+        title: {
+            text: 'Stress Oxydant',
+        },
+
+        pane: {
+            size: '80%',
+			startAngle: 0,
+            endAngle: 360
+    
+		
+        },
+
+        xAxis: {
+		        //tickInterval: 20,
+                min: 0,
+				max: 28,
+			
+            categories: [	
+'ATP',
+'ADP',
+'AMP',
+'AEC',
+'TAN',
+'GSH',
+'GSSG',
+'GSH+GSSG',
+'GSSG/GSH',
+'GPX',
+'CAT',
+'SOD1',
+'GR',
+'G6PD',
+'GS',
+'GCS',
+'THR',
+'MDA',
+'Cplx I',
+'Cplx II',
+'Cplx III',
+'Cplx IV',
+'ATP Synthase',
+'Cplx I+III',
+'Cplx II+III',
+'Citrate synthase',
+'SOD2',
+'VitA',
+'vitE'
+
+
+							],
+            lineWidth: 0,
+			labels: {
+                style: {
+             
+                    fontSize:'10px'
+                }
+				},
+				 gridZIndex: 4
+        },
+
+        yAxis: {
+            gridLineInterpolation: 'polygon',
+            lineWidth: 0,
+            min: 0,
+			max:250
+        },
+
+        tooltip: {
+            shared: false,
+            pointFormat: '<span style="color:{series.color}">NB : <b>{point.y:,.0f}</b><br/>'
+        },
+
+        legend: { },
+
+        series: [{
+    showInLegend : false,
+            name: 'High',
+			type:'area',
+            data: [
+128,
+125,
+133,
+100,
+127,
+135,
+143,
+136,
+109,
+130,
+123,
+112,
+127,
+121,
+111,
+118,
+140,
+139,
+126,
+113,
+142,
+122,
+117,
+141,
+118,
+111,
+131,
+122,
+138
+			],
+            pointPlacement: null,
+			marker: {enabled: false},
+			lineWidth: 0,
+			color: '#BCF5A9'
+			
+			
+        },
+		{
+		     showInLegend : false,
+			name: 'Low',
+			type:'area',
+            data: [
+72,
+75,
+67,
+100,
+73,
+65,
+57,
+64,
+91,
+70,
+77,
+88,
+73,
+79,
+89,
+82,
+60,
+61,
+74,
+87,
+88,
+78,
+83,
+59,
+82,
+89,
+69,
+78,
+62
+
+
+			],
+            pointPlacement: null,
+			marker: { enabled: false  },
+			lineWidth: 0,
+			color:'white'
+			
+        },
+		
+		
+			{
+            name: 'Patient',
+			 showInLegend : false,
+			type:'line',
+            data: [
+87,
+115,
+120,
+96,
+95,
+66,
+149,
+68,
+233,
+113,
+113,
+112,
+118,
+79,
+104,
+108,
+117,
+157,
+91,
+96,
+91,
+94,
+94,
+89,
+94,
+99,
+119,
+80,
+66
+
+			],
+            pointPlacement: 'on',
+			color:'#08298A',
+			           marker: {enabled: false  },
+
+        }
+		
+		]
+
+    });
+});
+
+
+
+
+/////////////////////////////////////////////////////////////////////////////////////////
 $(function () {
 
     $('#container').highcharts({
@@ -44,7 +286,7 @@ $(function () {
         },
 
         title: {
-            text: '',
+            text: 'Biochimie',
         },
 
         pane: {
@@ -205,6 +447,182 @@ $(function () {
 			79,
 			16,
 			124,
+
+
+			],
+            pointPlacement: 'on',
+			color:'#08298A',
+			           marker: {enabled: false  },
+
+        }
+		
+		]
+
+    });
+});
+
+
+
+
+
+/////////////////////////////////////////////////////////////////////////////////////////
+$(function () {
+
+    $('#container3').highcharts({
+
+	 credits: {
+            enabled: false
+        },
+		
+		exporting: { enabled: false },
+		
+        chart: {
+            polar: true,
+            type: 'line'
+        },
+
+        title: {
+            text: 'Hematologie',
+        },
+
+        pane: {
+            size: '80%',
+			startAngle: 0,
+            endAngle: 360
+    
+		
+        },
+
+        xAxis: {
+		        //tickInterval: 20,
+                min: 0,
+				max: 14,
+			
+            categories: [	
+'Hematie',
+'Hemoglobine',
+'Hematocrite',
+'V.G.M.',
+'T.C.M.H.',
+'C.C.M.H.',
+'Leucocytes totaux',
+'Neutrophiles',
+'Eosinophiles',
+'Basophiles',
+'Lymphocytes',
+'Monocytes',
+'Plaquettes',
+'Taux de fibrinogene',
+'Proteine-C -reactive'
+
+
+							],
+            lineWidth: 0,
+			labels: {
+                style: {
+             
+                    fontSize:'10px'
+                }
+				},
+				 gridZIndex: 4
+        },
+
+        yAxis: {
+            gridLineInterpolation: 'polygon',
+            lineWidth: 0,
+            min: 0,
+			max:250
+        },
+
+        tooltip: {
+            shared: false,
+            pointFormat: '<span style="color:{series.color}">NB : <b>{point.y:,.0f}</b><br/>'
+        },
+
+        legend: { },
+
+        series: [{
+    showInLegend : false,
+            name: 'High',
+			type:'area',
+            data: [
+	112,
+111,
+115,
+108,
+108,
+106,
+143,
+159,
+160,
+200,
+160,
+167,
+145,
+133,
+200
+
+			],
+            pointPlacement: null,
+			marker: {enabled: false},
+			lineWidth: 0,
+			color: '#BCF5A9'
+			
+			
+        },
+		{
+		     showInLegend : false,
+			name: 'Low',
+			type:'area',
+            data: [
+	88,
+89,
+85,
+92,
+92,
+94,
+57,
+41,
+40,
+0,
+40,
+33,
+55,
+67,
+0
+
+
+
+			],
+            pointPlacement: null,
+			marker: { enabled: false  },
+			lineWidth: 0,
+			color:'white'
+			
+        },
+		
+		
+			{
+            name: 'Patient',
+			 showInLegend : false,
+			type:'line',
+            data: [
+103,
+106,
+97,
+97,
+105,
+107,
+117,
+81,
+76,
+66,
+159,
+74,
+87,
+73,
+40
+
 
 
 			],
